@@ -8,111 +8,106 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.*?>
-<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="controller.editor_ScreenController">
-    <children>
-        <AnchorPane fx:id="motherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                    minWidth="-Infinity" prefHeight="387.0" prefWidth="748.0">
-            <children>
-                <JFXTextArea fx:id="txtTemplate" layoutX="12.0" layoutY="45.0" prefHeight="269.0" prefWidth="423.0"
-                             promptText="Hello, my name is [Name], and I am a full Stack Developer. I am submitting my bid for your open job of [Topic] because I specialize in your topics. Please consider me. Regards, [Name]"
-                             style="-fx-background-color: white;"/>
-                <JFXComboBox fx:id="cmbBoxField" editable="true" focusColor="#00cbff" labelFloat="true" layoutX="444.0"
-                             layoutY="13.0" prefHeight="25.0" prefWidth="290.0" promptText="Skill"/>
-                <HBox fx:id="hBoxTags" alignment="CENTER" layoutX="103.0" layoutY="14.0" prefHeight="25.0"
-                      prefWidth="330.0" spacing="8.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: black;">
-                    <children>
-                        <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="name"
-                                   textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for your Name"/>
-                            </tooltip>
-                        </JFXButton>
-                        <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
-                                   text="career" textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for your Career"/>
-                            </tooltip>
-                        </JFXButton>
-                        <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="topic"
-                                   textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for the work topic"/>
-                            </tooltip>
-                        </JFXButton>
-                        <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
-                                   text="skill" textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for your skill"/>
-                            </tooltip>
-                        </JFXButton>
-                        <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="rate"
-                                   textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for your Bid Price/ Rate per hour"/>
-                            </tooltip>
-                        </JFXButton>
-                        <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
-                                   text="hours" textFill="#00cbff">
-                            <font>
-                                <Font name="System Bold" size="12.0"/>
-                            </font>
-                            <tooltip>
-                                <Tooltip text="A placeholder for the hours per week"/>
-                            </tooltip>
-                        </JFXButton>
-                    </children>
-                </HBox>
-                <Label layoutX="17.0" layoutY="16.0" prefHeight="20.0" prefWidth="69.0" text="Insert Tag:">
-                    <font>
-                        <Font size="14.0"/>
-                    </font>
-                </Label>
-                <JFXRadioButton fx:id="rdbtnQuick" layoutX="583.0" layoutY="327.0" text="Save in Quick Category?">
-                    <tooltip>
-                        <Tooltip
-                                text="Selecting this will specify that the proposal is a short version. Tip: A short version should be straight to the point without necessary introductions."/>
-                    </tooltip>
-                </JFXRadioButton>
-                <JFXButton fx:id="btnAdd" defaultButton="true" layoutX="583.0" layoutY="354.0"
-                           onAction="#onbtnAdd_ActionPerformed" prefHeight="25.0" prefWidth="154.0"
-                           style="-fx-background-color: rgb(0,255,0,0.2);" text="Add Template" textFill="#00bf7b">
-                    <font>
-                        <Font name="System Bold" size="12.0"/>
-                    </font>
-                </JFXButton>
-                <JFXButton fx:id="btnCancel" cancelButton="true" layoutX="9.0" layoutY="354.0"
-                           onAction="#onbtnCancel_ActionPerformed" prefHeight="25.0" prefWidth="121.0"
-                           style="-fx-background-color: rgb(255,0,0,0.2);" text="Cancel" textFill="#bf0015">
-                    <font>
-                        <Font name="System Bold" size="12.0"/>
-                    </font>
-                </JFXButton>
-                <JFXButton fx:id="btnManageTemplates" layoutX="9.0" layoutY="323.0"
-                           onAction="#onbtnManageTemplates_ActionPerformed" prefHeight="27.0" prefWidth="121.0"
-                           style="-fx-border-radius: 3; -fx-border-color: rgb(200,200,200); -fx-text-fill: gray; -fx-background-radius: 5;"
-                           text="Manage Templates" textFill="#575757"/>
-                <TextArea fx:id="txtFlowTemplate" editable="false" focusTraversable="false" layoutX="444.0"
-                          layoutY="45.0" prefHeight="269.0" prefWidth="290.0"
-                          promptText="Preview: Hello, my name is Mike Gates, and I am a full Stack Developer. I am submitting my bid for your open job of Leaning Management System Development because I specialize in your topics. Please consider me. Regards, Mike"
-                          wrapText="true"/>
-                <Pane layoutX="441.0" layoutY="42.0" prefHeight="275.0" prefWidth="296.0"/>
-            </children>
-        </AnchorPane>
-    </children>
+<StackPane fx:id="stackPane" stylesheets="@../css/Cascades.css" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.controller.template_EditorController">
+    <AnchorPane fx:id="motherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                minWidth="-Infinity" prefHeight="387.0" prefWidth="748.0">
+        <JFXTextArea fx:id="txtTemplate" layoutX="12.0" layoutY="45.0" prefHeight="269.0" prefWidth="423.0"
+                     promptText="Hello, my name is [Name], and I am a full Stack Developer. I am submitting my bid for your open job of [Topic] because I specialize in your topics. Please consider me. Regards, [Name]"
+                     style="-fx-background-color: white;"/>
+        <JFXComboBox fx:id="cmbBoxField" editable="true" focusColor="#00cbff" labelFloat="true" layoutX="444.0"
+                     layoutY="13.0" prefHeight="25.0" prefWidth="290.0" promptText="Skill"/>
+        <HBox fx:id="hBoxTags" alignment="CENTER" layoutX="103.0" layoutY="14.0" prefHeight="25.0"
+              prefWidth="330.0" spacing="8.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: black;">
+            <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="name"
+                       textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for your Name"/>
+                </tooltip>
+            </JFXButton>
+            <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
+                       text="career" textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for your Career"/>
+                </tooltip>
+            </JFXButton>
+            <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="topic"
+                       textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for the work topic"/>
+                </tooltip>
+            </JFXButton>
+            <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
+                       text="skill" textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for your skill"/>
+                </tooltip>
+            </JFXButton>
+            <JFXButton focusTraversable="false" style="-fx-background-radius: 0;" text="rate"
+                       textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for your Bid Price/ Rate per hour"/>
+                </tooltip>
+            </JFXButton>
+            <JFXButton disable="true" focusTraversable="false" style="-fx-background-radius: 0;"
+                       text="hours" textFill="#00cbff">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+                <tooltip>
+                    <Tooltip text="A placeholder for the hours per week"/>
+                </tooltip>
+            </JFXButton>
+        </HBox>
+        <Label layoutX="17.0" layoutY="16.0" prefHeight="20.0" prefWidth="69.0" text="Insert Tag:">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <JFXRadioButton fx:id="rdbtnQuick" layoutX="583.0" layoutY="327.0" text="Save in Quick Category?">
+            <tooltip>
+                <Tooltip
+                        text="Selecting this will specify that the proposal is a short version. Tip: A short version should be straight to the point without necessary introductions."/>
+            </tooltip>
+        </JFXRadioButton>
+        <JFXButton fx:id="btnAdd" defaultButton="true" layoutX="583.0" layoutY="354.0"
+                   onAction="#onbtnAdd_ActionPerformed" prefHeight="25.0" prefWidth="154.0"
+                   style="-fx-background-color: rgb(0,255,0,0.2);" text="Add Template" textFill="#00bf7b">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" cancelButton="true" layoutX="9.0" layoutY="354.0"
+                   onAction="#onbtnCancel_ActionPerformed" prefHeight="25.0" prefWidth="121.0"
+                   style="-fx-background-color: rgb(255,0,0,0.2);" text="Cancel" textFill="#bf0015">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnManageTemplates" layoutX="9.0" layoutY="323.0"
+                   onAction="#onbtnManageTemplates_ActionPerformed" prefHeight="27.0" prefWidth="121.0"
+                   style="-fx-border-radius: 3; -fx-border-color: rgb(200,200,200); -fx-text-fill: gray; -fx-background-radius: 5;"
+                   text="Manage Templates" textFill="#575757"/>
+        <TextArea fx:id="txtFlowTemplate" editable="false" focusTraversable="false" layoutX="444.0"
+                  layoutY="45.0" prefHeight="269.0" prefWidth="290.0"
+                  promptText="Preview: Hello, my name is Mike Gates, and I am a full Stack Developer. I am submitting my bid for your open job of Leaning Management System Development because I specialize in your topics. Please consider me. Regards, Mike"
+                  wrapText="true"/>
+        <Pane layoutX="441.0" layoutY="42.0" prefHeight="275.0" prefWidth="296.0"/>
+    </AnchorPane>
 </StackPane>

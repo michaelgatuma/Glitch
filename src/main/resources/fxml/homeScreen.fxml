@@ -9,82 +9,76 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.*?>
 <StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="controller.main_ScreenController">
-    <children>
-        <AnchorPane fx:id="motherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                    minWidth="-Infinity" prefHeight="219.0" prefWidth="432.0" stylesheets="@../CascadeStyleSheet.css">
-            <children>
-                <JFXTextField fx:id="txtBidRate" alignment="CENTER" layoutX="5.0" layoutY="5.0"
-                              onKeyReleased="#ontxtBidRate_KeyReleased" prefHeight="25.0" prefWidth="56.0"
-                              promptText="\$18.00"/>
-                <JFXTextField fx:id="txtProjectTopic" layoutX="76.0" layoutY="5.0"
-                              onKeyReleased="#ontxtProjectTopic_KeyReleased" prefHeight="25.0" prefWidth="255.0"
-                              promptText="APA Formatted  American History Research..."/>
-                <JFXTextArea fx:id="txtDescription" layoutX="5.0" layoutY="34.0"
-                             onKeyReleased="#ontxtDescription_KeyReleased" prefHeight="177.0" prefWidth="327.0"
-                             wrapText="true"/>
-                <VBox fx:id="vBoxSkills" layoutX="337.0" layoutY="47.0" prefHeight="102.0" prefWidth="89.0"
-                      spacing="4.0">
-                    <children>
-                        <RadioButton mnemonicParsing="false" selected="true" text="RadioButton"/>
-                        <RadioButton mnemonicParsing="false" text="RadioButton"/>
-                        <RadioButton mnemonicParsing="false" text="RadioButton"/>
-                        <RadioButton layoutX="10.0" layoutY="52.0" mnemonicParsing="false" text="RadioButton"/>
-                        <JFXButton fx:id="btnMoreSkills" alignment="TOP_CENTER" maxHeight="-Infinity"
-                                   minHeight="-Infinity" onAction="#onbtnMoreSkills_ActionPerformed" prefHeight="18.0"
-                                   prefWidth="89.0" text="More..." textFill="WHITE"/>
-                    </children>
-                </VBox>
-                <JFXButton fx:id="btnRefresh" alignment="CENTER" layoutX="337.0" layoutY="152.0"
-                           onAction="#onbtnRefresh_ActionPerformed" prefHeight="25.0" prefWidth="89.0" text="Refresh"
-                           textFill="WHITE"/>
-                <JFXButton fx:id="btnCloseOptions" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="407.0"
-                           onAction="#onbtnCloseOptions_ActionPerformed" prefHeight="25.0" prefWidth="25.0"
-                           style="-fx-background-color: black;" text="x" textFill="WHITE">
-                    <graphic>
-                        <MaterialDesignIconView fill="WHITE" glyphName="POWER_SETTINGS" size="20"/>
-                    </graphic>
-                </JFXButton>
-                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="335.0" layoutY="26.0" prefHeight="18.0"
-                       prefWidth="95.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: black;" text="Skill Set"
-                       textFill="#545454"/>
-                <JFXButton fx:id="btnSwap" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="353.0"
-                           onAction="#onbtnSwap_ActionPerformed" prefHeight="25.0" prefWidth="25.0" text="alt"
-                           textFill="WHITE">
-                    <font>
-                        <Font size="10.0"/>
-                    </font>
-                </JFXButton>
-                <JFXButton fx:id="btnMinimize" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="380.0"
-                           onAction="#onbtnMinimize_ActionPerformed" prefHeight="25.0" prefWidth="25.0" text="m"
-                           textFill="WHITE">
-                    <font>
-                        <Font size="10.0"/>
-                    </font>
-                </JFXButton>
-                <Label fx:id="lblFeedback" layoutX="346.0" layoutY="198.0"
-                       onMouseReleased="#onlblFeedback_MouseReleased" text="Send Feedback" textFill="#008fd7"
-                       underline="true">
-                    <font>
-                        <Font size="11.0"/>
-                    </font>
-                </Label>
-                <JFXToggleButton fx:id="tglbtnQuick" layoutX="273.0" layoutY="186.0"
-                                 onAction="#ontglbtnQuick_ActionPerformed" prefHeight="24.0" prefWidth="59.0" size="4.0"
-                                 text="Quick">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
-                </JFXToggleButton>
-                <Label fx:id="lblGithub" layoutX="362.0" layoutY="183.0" onMouseReleased="#onlblGithub_MouseReleased"
-                       text="Github">
-                    <font>
-                        <Font name="System Bold" size="12.0"/>
-                    </font>
-                </Label>
-                <JFXProgressBar fx:id="jfxProgress" layoutX="5.0" layoutY="214.0" prefHeight="3.0" prefWidth="327.0"
-                                progress="0.0"/>
-            </children>
-        </AnchorPane>
-    </children>
+           fx:controller="com.controller.homeController">
+    <AnchorPane fx:id="motherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                minWidth="-Infinity" prefHeight="219.0" prefWidth="432.0" stylesheets="@../css/Cascades.css">
+        <JFXTextField fx:id="txtBidRate" alignment="CENTER" layoutX="5.0" layoutY="5.0"
+                      onKeyReleased="#ontxtBidRate_KeyReleased" prefHeight="25.0" prefWidth="56.0"
+                      promptText="\$18.00"/>
+        <JFXTextField fx:id="txtProjectTopic" layoutX="76.0" layoutY="5.0"
+                      onKeyReleased="#ontxtProjectTopic_KeyReleased" prefHeight="25.0" prefWidth="255.0"
+                      promptText="APA Formatted  American History Research..."/>
+        <JFXTextArea fx:id="txtDescription" layoutX="5.0" layoutY="34.0"
+                     onKeyReleased="#ontxtDescription_KeyReleased" prefHeight="177.0" prefWidth="327.0"
+                     wrapText="true"/>
+        <VBox fx:id="vBoxSkills" layoutX="337.0" layoutY="47.0" prefHeight="102.0" prefWidth="89.0"
+              spacing="4.0">
+            <RadioButton mnemonicParsing="false" selected="true" text="RadioButton"/>
+            <RadioButton mnemonicParsing="false" text="RadioButton"/>
+            <RadioButton mnemonicParsing="false" text="RadioButton"/>
+            <RadioButton layoutX="10.0" layoutY="52.0" mnemonicParsing="false" text="RadioButton"/>
+            <JFXButton fx:id="btnMoreSkills" alignment="TOP_CENTER" maxHeight="-Infinity"
+                       minHeight="-Infinity" onAction="#onbtnMoreSkills_ActionPerformed" prefHeight="18.0"
+                       prefWidth="89.0" text="More..." textFill="WHITE"/>
+        </VBox>
+        <JFXButton fx:id="btnRefresh" alignment="CENTER" layoutX="337.0" layoutY="152.0"
+                   onAction="#onbtnRefresh_ActionPerformed" prefHeight="25.0" prefWidth="89.0" text="Refresh"
+                   textFill="WHITE"/>
+        <JFXButton fx:id="btnCloseOptions" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="407.0"
+                   onAction="#onbtnCloseOptions_ActionPerformed" prefHeight="25.0" prefWidth="25.0"
+                   style="-fx-background-color: black;" text="x" textFill="WHITE">
+            <graphic>
+                <MaterialDesignIconView fill="WHITE" glyphName="POWER_SETTINGS" size="20"/>
+            </graphic>
+        </JFXButton>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="335.0" layoutY="26.0" prefHeight="18.0"
+               prefWidth="95.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: black;" text="Skill Set"
+               textFill="#545454"/>
+        <JFXButton fx:id="btnSwap" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="353.0"
+                   onAction="#onbtnSwap_ActionPerformed" prefHeight="25.0" prefWidth="25.0" text="alt"
+                   textFill="WHITE">
+            <font>
+                <Font size="10.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnMinimize" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="380.0"
+                   onAction="#onbtnMinimize_ActionPerformed" prefHeight="25.0" prefWidth="25.0" text="m"
+                   textFill="WHITE">
+            <font>
+                <Font size="10.0"/>
+            </font>
+        </JFXButton>
+        <Label fx:id="lblFeedback" layoutX="346.0" layoutY="198.0"
+               onMouseReleased="#onlblFeedback_MouseReleased" text="Send Feedback" textFill="#008fd7"
+               underline="true">
+            <font>
+                <Font size="11.0"/>
+            </font>
+        </Label>
+        <JFXToggleButton fx:id="tglbtnQuick" layoutX="273.0" layoutY="186.0"
+                         onAction="#ontglbtnQuick_ActionPerformed" prefHeight="24.0" prefWidth="59.0" size="4.0"
+                         text="Quick">
+            <font>
+                <Font size="9.0"/>
+            </font>
+        </JFXToggleButton>
+        <Label fx:id="lblGithub" layoutX="362.0" layoutY="183.0" onMouseReleased="#onlblGithub_MouseReleased"
+               text="Github">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXProgressBar fx:id="jfxProgress" layoutX="5.0" layoutY="214.0" prefHeight="3.0" prefWidth="327.0"
+                        progress="0.0"/>
+    </AnchorPane>
 </StackPane>

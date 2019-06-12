@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/homeScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/homeScreen.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Glitch");
         primaryStage.setScene(new Scene(root, 432, 219));
