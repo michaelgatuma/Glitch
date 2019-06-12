@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="fatherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="41.0" prefWidth="432.0" styleClass="Scenes-light" stylesheets="@../CascadeStyleSheet.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.minified_ScreenController">
+    <children>
+        <JFXButton fx:id="btn_Maximize" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY"
+                   ellipsisString="" layoutX="382.0" layoutY="8.0" prefHeight="25.0" prefWidth="25.0"
+                   style="-fx-background-color: white; -fx-padding: 0; -fx-background-radius: 0;" text=" ">
+            <graphic>
+                <MaterialIconView fx:id="iconMaximize_MaterialIcon" glyphName="FULLSCREEN" size="24"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="btn_Power" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="407.0"
+                   layoutY="8.0" prefHeight="25.0" prefWidth="25.0" ripplerFill="WHITE"
+                   style="-fx-background-color: darkred; -fx-padding: 0; -fx-background-radius: 0;" text=" ">
+            <graphic>
+                <MaterialIconView fx:id="iconPower_MaterialIcon" fill="WHITE" glyphName="POWER_SETTINGS_NEW" size="20"/>
+            </graphic>
+        </JFXButton>
+        <JFXTextField fx:id="txt_Topic" layoutX="131.0" layoutY="7.0" prefHeight="25.0" prefWidth="158.0"
+                      promptText="i.e American History Research" unFocusColor="BLACK">
+            <focusColor>
+                <LinearGradient endX="1.0" endY="0.419047619047619" startY="0.41904761904761906">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#e48500" offset="0.2222222222222222"/>
+                        <Stop color="#ffcc85" offset="0.4964253268554727"/>
+                        <Stop color="#e38400" offset="0.7287593316743683"/>
+                        <Stop color="BLACK" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXTextField>
+        <JFXTextField fx:id="txt_BidAmt" alignment="CENTER" layoutX="9.0" layoutY="7.0" prefHeight="25.0"
+                      prefWidth="52.0" promptText="i.e $40.00" unFocusColor="BLACK">
+            <focusColor>
+                <LinearGradient endX="1.0" endY="0.419047619047619" startY="0.41904761904761906">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#e48500" offset="0.2222222222222222"/>
+                        <Stop color="#ffcc85" offset="0.4964253268554727"/>
+                        <Stop color="#e38400" offset="0.7287593316743683"/>
+                        <Stop color="BLACK" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXTextField>
+        <JFXTextField fx:id="txt_hours" alignment="CENTER" layoutX="71.0" layoutY="7.0" prefHeight="25.0"
+                      prefWidth="52.0" promptText="i.e 22hrs" unFocusColor="BLACK">
+            <focusColor>
+                <LinearGradient endX="1.0" endY="0.419047619047619" startY="0.41904761904761906">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#e48500" offset="0.2222222222222222"/>
+                        <Stop color="#ffcc85" offset="0.4964253268554727"/>
+                        <Stop color="#e38400" offset="0.7287593316743683"/>
+                        <Stop color="BLACK" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXTextField>
+        <JFXToggleButton fx:id="tglbtn_Quick" alignment="CENTER_LEFT" layoutX="288.0" layoutY="9.0" prefHeight="26.0"
+                         prefWidth="61.0" size="4.0"
+                         style="-fx-background-color: rgb(255,255,255,0.5); -fx-background-radius: 25;" text="Quick"
+                         textFill="#363636" unToggleLineColor="#ae0101">
+            <font>
+                <Font name="System Bold" size="9.0"/>
+            </font>
+        </JFXToggleButton>
+        <JFXButton fx:id="btnFieldNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="351.0" layoutY="8.0"
+                   prefHeight="27.0" prefWidth="27.0"
+                   style="-fx-border-width: 1; -fx-border-color: grey; -fx-border-radius: 25; -fx-background-radius: 25;"
+                   text="1" textFill="#797979">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+    </children>
+    <effect>
+        <DropShadow blurType="GAUSSIAN" height="29.9" radius="15.93" spread="0.22" width="35.82"/>
+    </effect>
+</AnchorPane>

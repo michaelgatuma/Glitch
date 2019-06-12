@@ -1,0 +1,167 @@
+/*
+    Created on : May 20, 2019, 5:53:07 PM
+    Author     : Michael Gatuma
+*/
+
+/*
+******************************JFX-Buttons**************************
+*/
+/*Default for all Buttons*/
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: #f1f1f1;
+    -fx-text-fill: black;
+    -fx-background-radius: 0px;
+    -jfx-rippler-fill: black;
+    -fx-padding: 0px;
+}
+
+/*Hover Effects*/
+.jfx-button :hover {
+    -jfx-button-type: FLAT;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+/*Rippler Effect*/
+.jfx-button .jfx-rippler {
+    -fx-rippler-fill: black;
+}
+
+/*Popup Buttons Styling*/
+.Popup-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
+.Popup-close-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: ffaea9;
+    -fx-font-color: white;
+    -fx-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
+.MaterialDesignIcon {
+    -fx-fill: yellow;
+}
+
+/*
+******************************JFX-Toggle-Buttons*******************
+*/
+/*Default for all Toggle-Buttons*/
+.jfx-toggle-button {
+    -jfx-toggle-color: #009688;
+    -jfx-untoggle-color: #FAFAFA;
+    -jfx-toggle-line-color: #77C2BB;
+    -jfx-untoggle-line-color: #999999;
+    -jfx-size: 4.0;
+    -jfx-disable-visual-focus: false;
+}
+
+/*
+****************************JFX-Progress-Bar**********************
+*/
+.jfx-progress-bar>.track {
+    -fx-background-color: rgb(0, 0, 0, 0.0);
+}
+
+.jfx-progress-bar>.bar {
+    -fx-background-color: #009688;
+}
+
+.jfx-progress-bar {
+    -fx-padding: 0px;
+    -fx-progress-color: yellow;
+}
+
+/*
+*******************************************Radio Button
+*/
+.radio-button .radio {
+    -fx-border-width: 1px;
+    /*-fx-border-color: #000;
+    /*-fx-background-color: red;*/
+    -fx-background-image: null;
+    -fx-border-radius: 15px;
+    -fx-padding: 4px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.radio-button .radio:selected {
+    -fx-background-color: red;
+    -fx-background-image: null;
+}
+
+.radio-button -radio:armed {
+    -fx-background-color: red;
+    -fx-background-image: null;
+}
+
+.radio-button -radio:determinate {
+    -fx-background-color: red;
+    -fx-background-image: null;
+}
+
+.radio-button -radio:indeterminate {
+    -fx-background-color: red;
+    -fx-background-image: null;
+}
+
+.radio-button .dot {
+    -fx-background-radius: 15px;
+    /*-fx-padding: 8px;*/
+}
+
+.VBox {
+    background-color: white;
+}
+
+.TextArea {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: black;
+    -fx-highlight-text-fill: transparent;
+    -fx-display-caret: false;
+}
+
+.TextArea :focus {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: black;
+    -fx-highlight-text-fill: transparent;
+    -fx-display-caret: false;
+}
+
+.TextArea :disabled {
+    -fx-opacity: 1.0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: black;
+    -fx-highlight-text-fill: transparent;
+    -fx-display-caret: false;
+}
+
+.jfx-snackbar-content {
+    -fx-background-color: #009688;
+}
+
+.jfx-snackbar-content-error {
+    -fx-background-color: #b71c1c;
+}
+
+.jfx-snackbar-toast {
+    -fx-text-fill: WHITE;
+}
+
+.jfx-snackbar-action {
+    -fx-text-fill: #ff4081;
+}
