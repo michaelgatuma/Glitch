@@ -12,8 +12,10 @@ import java.io.IOException;
 import static java.nio.charset.Charset.forName;
 
 public class License {
-    private static String dir = "Required";
-    private static File keyFile = new File(dir + "/auth.key");
+    private static String dir = "required";
+    static String path = "/auth.txt";
+    private static File keyFile = new File(dir + path);
+
     private static String poison = "wuXs3UlDTKwOoBegKLMc";
     FireStore cloud = new FireStore();
 
@@ -52,6 +54,16 @@ public class License {
     Read the Key From a File
      */
     public String readKey() {
+        File directory = new File(dir);
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+
+        try {
+            keyFile.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String metadata = null;
         FileInputStream inputStream;
         try {

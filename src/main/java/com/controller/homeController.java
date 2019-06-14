@@ -121,16 +121,17 @@ public class homeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        FireStore.init();
+        //new FireStore().init();
 
         JFXDialogLayout content = new JFXDialogLayout();
         JFXDialog dialog = new JFXDialog(stackPane, content, JFXDialog.DialogTransition.CENTER, false);
         if (license.isPoisoned())
             System.exit(0);
-        else if (license.readKey().length() != 500 || !license.isValid())
+        else if (license.readKey().length() != 500)
             CheckPoint();
         if (Local.isNetAvailable()) {
-            String msg = cloud.getDocument("status");
+
+            String msg = cloud.upgrade(license.readKey());
             if (msg.contains("UPGRADE")) {
                 content.setAlignment(Pos.CENTER);
                 Text t = new Text("UPGRADE!");
@@ -147,10 +148,12 @@ public class homeController implements Initializable {
                 container.setAlignment(Pos.BOTTOM_CENTER);
                 dialog.getChildren().add(container);
                 dialog.show();
-            } else if (msg.equals("BLOCK")) {
+            } else if (cloud.isBlocked(license.readKey())) {
                 new License().revokeLicense();
                 System.exit(0);
             }
+            if (!cloud.isValid(license.readKey()))
+                CheckPoint();
         }
         floatingButtons();
         setIcons();
@@ -380,12 +383,17 @@ public class homeController implements Initializable {
         //TODO: Change the name variable to fetch from database
         String name;
         try {
-            File p = new File("configuration/butler/user.properties");
+            File p = new File("required/user.properties");
             p.createNewFile();
             FileInputStream input = new FileInputStream(p);
             Properties prop = new Properties();
             prop.load(input);
-            name = prop.getProperty("profile");
+            name = "[SET YOUR NAME AT: Settings -> Profile Name]";
+            if (prop.getProperty("profile") == null) {
+                name = "[SET YOUR NAME AT: Settings -> Profile Name]";
+            } else {
+                name = prop.getProperty("profile");
+            }
             String topic = txtProjectTopic.getText();
             String text = txtDescription.getText();
             text = text.replace("\\n", "\n");

@@ -16,13 +16,18 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class FireStore {
-    public static void init() {
+    static String path = "required/glitch-2eadc-firebase-adminsdk-wmtii-304d05a0f0.json";
+
+    public static void init_old() {
+        String name;
         FileInputStream refreshToken = null;
+
         try {
-            refreshToken = new FileInputStream("glitch-2eadc-firebase-adminsdk-wmtii-304d05a0f0.json");
+            refreshToken = new FileInputStream(path);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         GoogleCredentials credentials = null;
         try {
             credentials = GoogleCredentials.fromStream(refreshToken);
@@ -31,16 +36,70 @@ public class FireStore {
         }
         String projectId = "glitch-2eadc";
 
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(credentials)
-                .setProjectId(projectId)
-                .build();
-        FirebaseApp.initializeApp(options);
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        /////////////////////////////////
     }
 
     public void write(String user, String email, boolean isActive, String activationDate, String key, String status) {
         // Use the application default credentials
+        String name;
 
+        FileInputStream refreshToken = null;
+
+        try {
+            refreshToken = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GoogleCredentials credentials = null;
+        try {
+            credentials = GoogleCredentials.fromStream(refreshToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String projectId = "glitch-2eadc";
+
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Firestore db = FirestoreClient.getFirestore();
 
@@ -60,6 +119,7 @@ public class FireStore {
     }
 
     public void read() {
+
         try {
             FileInputStream refreshToken = new FileInputStream("glitch-2eadc-firebase-adminsdk-wmtii-304d05a0f0.json");
             GoogleCredentials credentials = GoogleCredentials.fromStream(refreshToken);
@@ -95,6 +155,43 @@ public class FireStore {
     }
 
     public String getDocument(String doc) {
+        String name;
+        FileInputStream refreshToken = null;
+
+        try {
+            refreshToken = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GoogleCredentials credentials = null;
+        try {
+            credentials = GoogleCredentials.fromStream(refreshToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String projectId = "glitch-2eadc";
+
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try {
 
 
@@ -118,5 +215,177 @@ public class FireStore {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean isBlocked(String key) {
+        String name;
+        FileInputStream refreshToken = null;
+
+        try {
+            refreshToken = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GoogleCredentials credentials = null;
+        try {
+            credentials = GoogleCredentials.fromStream(refreshToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String projectId = "glitch-2eadc";
+
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Firestore db = FirestoreClient.getFirestore();
+        // asynchronously retrieve all users
+        CollectionReference users = db.collection("users");
+// Create a query against the collection.
+        Query query = users.whereEqualTo("key", key);
+// retrieve  query results asynchronously using query.get()
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        try {
+            for (DocumentSnapshot document : querySnapshot.get().getDocuments()) {
+                if (document.get("status").toString().equals("BLOCK"))
+                    return true;
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public String upgrade(String key) {
+        String name;
+        FileInputStream refreshToken = null;
+
+        try {
+            refreshToken = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GoogleCredentials credentials = null;
+        try {
+            credentials = GoogleCredentials.fromStream(refreshToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String projectId = "glitch-2eadc";
+
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Firestore db = FirestoreClient.getFirestore();
+        // asynchronously retrieve all users
+        CollectionReference users = db.collection("users");
+// Create a query against the collection.
+        Query query = users.whereEqualTo("key", key);
+// retrieve  query results asynchronously using query.get()
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        try {
+            for (DocumentSnapshot document : querySnapshot.get().getDocuments()) {
+                if (document.get("status").toString().contains("UPGRADE"))
+                    return document.get("status").toString();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public boolean isValid(String key) {
+        String name;
+        FileInputStream refreshToken = null;
+
+        try {
+            refreshToken = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GoogleCredentials credentials = null;
+        try {
+            credentials = GoogleCredentials.fromStream(refreshToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String projectId = "glitch-2eadc";
+
+        ////////////////////////////////////
+        try {
+            boolean hasBeenInitialized = false;
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            for (FirebaseApp app : firebaseApps) {
+                if (app.getName().equals(FirebaseApp.DEFAULT_APP_NAME)) {
+                    hasBeenInitialized = true;
+                }
+            }
+
+            if (!hasBeenInitialized) {
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(credentials)
+                        .setProjectId(projectId)
+                        .build();
+                FirebaseApp.initializeApp(options);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Firestore db = FirestoreClient.getFirestore();
+        // asynchronously retrieve all users
+        CollectionReference users = db.collection("users");
+// Create a query against the collection.
+        Query query = users.whereEqualTo("key", key);
+// retrieve  query results asynchronously using query.get()
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        try {
+            if (querySnapshot.get().getDocuments().isEmpty())
+                return false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

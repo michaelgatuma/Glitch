@@ -1,6 +1,5 @@
 package com.data;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,16 +8,11 @@ import java.sql.SQLException;
  * @author Michael
  */
 public class dataManager {
-    private static String path = "main/java/com/data/local.db";
+    private static String path = "jdbc:sqlite:required/local.db";
+    //private static String path = "main/java/com/data/local.db";
 
     public static Connection getSQLiteConnection() {
         //run below block if database path does not exist
-        if (!new File(path).exists()) {
-            //For Development purposes this block will add '/src' to the path of the database
-            System.out.println("Info: Database detected Development Environment");
-            path = "src/" + path;
-        }
-        path = "jdbc:sqlite:" + path;
         try {
             Class.forName("org.sqlite.JDBC");
             return DriverManager.getConnection(path);

@@ -37,13 +37,10 @@ public class Local {
     public static String getUserPath() {
         return userPath;
     }
-
     public void setUserPath(String userPath) {
         Local.userPath = userPath;
     }
-
     public static boolean isNetAvailable() {
-
         try {
             final URL url = new URL("http://www.google.com");
             final URLConnection conn = url.openConnection();

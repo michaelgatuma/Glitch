@@ -7,9 +7,8 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane fx:id="fatherPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="41.0" prefWidth="432.0" styleClass="Scenes-light" stylesheets="@../css/Cascades.css"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.controller.miniController">
+            prefHeight="41.0" prefWidth="432.0" styleClass="Scenes-light" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.miniController">
     <effect>
         <DropShadow blurType="GAUSSIAN" height="29.9" radius="15.93" spread="0.22" width="35.82"/>
     </effect>
@@ -17,7 +16,8 @@
                ellipsisString="" layoutX="382.0" layoutY="8.0" prefHeight="25.0" prefWidth="25.0"
                style="-fx-background-color: white; -fx-padding: 0; -fx-background-radius: 0;" text=" ">
         <graphic>
-            <MaterialIconView fx:id="iconMaximize_MaterialIcon" glyphName="FULLSCREEN" size="24"/>
+            <MaterialIconView fx:id="iconMaximize_MaterialIcon" glyphName="FULLSCREEN" size="24"
+                              wrappingWidth="15.4921875"/>
         </graphic>
     </JFXButton>
     <JFXButton fx:id="btn_Power" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="407.0"
@@ -41,8 +41,8 @@
             </LinearGradient>
         </focusColor>
     </JFXTextField>
-    <JFXTextField fx:id="txt_BidAmt" alignment="CENTER" layoutX="9.0" layoutY="7.0" prefHeight="25.0"
-                  prefWidth="52.0" promptText="i.e $40.00" unFocusColor="BLACK">
+    <JFXTextField fx:id="txt_BidAmt" alignment="CENTER" layoutX="9.0" layoutY="7.0" prefHeight="25.0" prefWidth="52.0"
+                  promptText="i.e $40.00" unFocusColor="BLACK">
         <focusColor>
             <LinearGradient endX="1.0" endY="0.419047619047619" startY="0.41904761904761906">
                 <stops>
@@ -55,8 +55,8 @@
             </LinearGradient>
         </focusColor>
     </JFXTextField>
-    <JFXTextField fx:id="txt_hours" alignment="CENTER" layoutX="71.0" layoutY="7.0" prefHeight="25.0"
-                  prefWidth="52.0" promptText="i.e 22hrs" unFocusColor="BLACK">
+    <JFXTextField fx:id="txt_hours" alignment="CENTER" layoutX="71.0" layoutY="7.0" prefHeight="25.0" prefWidth="52.0"
+                  promptText="i.e 22hrs" unFocusColor="BLACK">
         <focusColor>
             <LinearGradient endX="1.0" endY="0.419047619047619" startY="0.41904761904761906">
                 <stops>

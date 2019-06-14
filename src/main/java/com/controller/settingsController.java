@@ -68,7 +68,7 @@ public class settingsController implements Initializable {
 
     @FXML
     void onBtnCloseOptions_ActionPerformed(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/homeScreen.fxml"));
+        StackPane pane = FXMLLoader.load(getClass().getResource("/fxml/homeScreen.fxml"));
         stackPane.getChildren().setAll(pane);
     }
 
@@ -94,7 +94,7 @@ public class settingsController implements Initializable {
 
     void nameDialogConstructor() {
         try {
-            File p = new File("configuration/butler/user.properties");
+            File p = new File("required/user.properties");
             p.createNewFile();
             FileInputStream input = new FileInputStream(p);
             Properties prop = new Properties();
@@ -110,7 +110,7 @@ public class settingsController implements Initializable {
         }
         btnSave.setOnAction(e -> {
             try {
-                File p = new File("configuration/butler/user.properties");
+                File p = new File("required/user.properties");
                 p.createNewFile();
                 OutputStream output = new FileOutputStream(p);
                 Properties prop = new Properties();
