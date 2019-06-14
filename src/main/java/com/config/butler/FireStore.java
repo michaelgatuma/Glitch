@@ -121,7 +121,7 @@ public class FireStore {
     public void read() {
 
         try {
-            FileInputStream refreshToken = new FileInputStream("glitch-2eadc-firebase-adminsdk-wmtii-304d05a0f0.json");
+            FileInputStream refreshToken = new FileInputStream("required/glitch-2eadc-firebase-adminsdk-wmtii-304d05a0f0.json");
             GoogleCredentials credentials = GoogleCredentials.fromStream(refreshToken);
             String projectId = "glitch-2eadc";
 
